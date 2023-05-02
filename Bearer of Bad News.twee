@@ -1,0 +1,599 @@
+:: StoryTitle
+LDJam
+
+
+:: StoryData
+{
+  "ifid": "0B8881B3-43E1-4A63-98A4-ECA25184B46C",
+  "format": "Harlowe",
+  "format-version": "3.3.5",
+  "start": "Intro",
+  "zoom": 1
+}
+
+
+:: "Could you tell me more about the client?" {"position":"900,750","size":"100,100"}
+"Read the files and look around their houses one you get there."
+
+His curt answer implies to you that he doesn't want to be bothered anymore. With that you [[leave his office]].
+
+
+:: "I'm not feeling too good today, actually. Could I have the day off?" {"position":"650,750","size":"100,100"}
+(set:$actions to 3)After you ask him, he looks you in the eye and asks you, "You looked just fine, but I guess if you really need it then you can take the day off. I'll get one of your coworkers to cover you. You can leave now."
+
+You leave the office and didn't think that it would actually work. Despite working at a really shady company, it seems like your boss values his employees.
+
+''The End. You can however, (link: "try again.")[(go-to:"leave his office")]''
+
+
+:: "Just wanted to see you before I went out" {"position":"775,750","size":"100,100"}
+"Cute. Now get out." 
+
+He seems unhappy that you wasted his time.
+
+With that, you [[leave his office]].
+
+
+:: Ashley's File {"position":"1400,750","size":"100,100"}
+{(set:$ashley to true)(set: $actions to $actions - 1)}Grigory Alexander
+
+<img alt="ashley" src="grigory.png" />
+
+''Age:'' 66 Years Old
+''Occupation:'' Architect
+''Need to Collect:'' Deed to house
+''Reason:'' Husband took out a loan and forged his wife's signature to be a co-guarantor. Husband put up the house as collateral. He ran away a year ago and since then, no loans have been paid so it's time to collect on the collateral.
+''Additional Info:'' She hates her husband, but she adores her kids and will defend and protect them, even if they're adults.
+
+(link:"Return")[(if: $actions is not 0)[(go-to:"Skim through client files")](else:)[(go-to: "time to leave")]]
+(link: "Do something else")[(go-to: "leave his office")]
+
+
+:: Blackmail him using his family {"position":"900,1500","size":"100,100"}
+(set: $success to 1)He looks at you defiantly, but his expression changes as you speak.
+
+"While you were gone, I saw your lovely family photos. I hope nothing bad were to happen to them, especially because of you."
+
+His expression changes to one of worry and pleading. "You can't be threatening me like this. They're all that I have. You can't do anything to them."
+
+"Then I suggest you pay up right now."
+
+He hurriedly runs to his bed and pulls up the cushion and grabs a wad of cash. He throws it at you and says, "Here. Now get out and make sure that you don't do anything to my family."
+
+You leave happy that you've completed your task. You leave his house as you [[finish for the day]].
+
+
+:: Blackmail him using his manuscript {"position":"1025,1625","size":"100,100"}
+Before he can do or say anything, you pull out the manuscript you took earlier.
+
+At first Grigory looks confused, but he slowly realizes what you have.
+
+"Oh no. Is that my manuscript?"
+
+"Yes. Now if you don't want anything to happen to your precious hardwork, pay up."
+
+He trudges off to the bathroom and re-enters the main area holding a wad of cash.
+
+"Here this should be enough. Now give me back my manuscript and leave."
+
+You hesitantly take the cash and put it in a ziplock bag. You don't know why the money was in the bathroom, but you don't want to hold it for too long.
+
+You leave his apartment as you [[finish for the day]].
+
+
+:: Cry and gain his sympathies {"position":"900,1625","size":"100,100"}
+(set: $debt to 300)You think of your dog dying and other things that make you really sad to turn up the waterworks.
+
+With your tear-filled eyes, you tell him, "You don't understand. I don't want to do this. They're holding my family hostage. I only have to do this job so that they stay alive."
+
+Of course that's a lie. You really enjoy working at the company and your family members are doing well.
+
+You look at his expression to see if it's working. You see that his face has changed to one that was filled with concern. Success.
+
+"Oh no. I'm so sorry. How long have they been held hostage by the company? We should work together to gather evidence against them and go to the cops."
+
+Uh oh. You haven't thought that far. You start thinking of what to do next.
+
+It seems like your expression betrays you because you hear Grigory say, "I knew you were lying. Get out of my face."
+
+While you're caught off guard, he was able to push you out of his apartment. You leave for the office as you [[finish for the day]].
+
+
+:: Do nothing and wait for Grigory to return {"position":"1025,1125","size":"100,100"}
+{(set: $actions to 0)}After waiting for a while, you hear the doorknob jiggle, indicating that Grigory has returned.
+
+It's time to [[confront Grigory]].
+
+
+:: Eat breakfast {"position":"1275,625","size":"100,100"}
+{(set: $hunger to false)
+(set: $actions to $actions - 1)
+}You take a frozen breakfast sandwich from the office fridge and heat it up in the microwave. 
+
+It's a good idea to eat before your busy day.
+
+(link:"You return back to your desk.")[(go-to:"leave his office")]
+
+
+:: Grigory's File {"position":"1150,750","size":"100,100"}
+{(set:$grigory to true)(set: $actions to $actions - 1)}Grigory Alexander
+
+<img alt="grigory" src="grigory.png" />
+
+''Age:'' 23 Years Old
+''Occupation:'' Struggling Writer
+''Need to Collect:'' $300
+''Reason:'' Borrowed money to pay for apartment costs
+''Additional Info:'' Weak-spirited. He may put up a fight at first, but he is easily intimidated and persuaded.
+
+(link:"Return to files")[(if: $actions is not 0)[(go-to:"Skim through client files")](else:)[(go-to: "time to leave")]]
+(link: "Do something else")[(go-to: "leave his office")]
+
+
+
+:: Grigory's apartment {"position":"1025,875","size":"100,100"}
+{(set: $agitation to 0)
+}You arrive at Grigory's apartment. You ring the doorbell.
+
+(click-replace:"You ring the doorbell.")[
+
+//ding dong//
+
+You see the door open and see a tired (if: $grigory is true)[Grigory. It seems he spent the whole night writing.](else:)[young monkey. You can't really tell his age since his eyebags seem to age him.]
+
+He looks you up and down confused at first who you are and why you're there. After a few moments, you see his eyes widen and when he realizes who you are.
+
+"Oh that's right. It's the 2nd Wednesday of the month." You hear him mutter to himself.
+
+With that, you see him hold the door open for you. A silent invitation to (link: "come inside.")[(go-to:"Inside Grigory's House")]]
+
+
+:: His desk chair {"position":"775,1250","size":"100,100"}
+(set: $actions to $actions-1)It's a simple wooden chair. While it's very sturdy, it looks very uncomfortable.
+
+Other than it being the cause for his bad posture, there's nothing else of note of thsi chair.
+
+(link: "Continue looking through his desk")[(go-to:"Look through his desk")]
+(link:"Do something else")[(go-to:"Inside Grigory's House")]
+
+
+:: Inside Grigory's House {"position":"1025,1000","size":"100,100"}
+(if: $grigory_h is false)[As you enter his apartment, you can easily tell that he lives in a small studio apartment.{
+(set: $grigory_h to true)
+(set: $actions to 5)
+(set: $manuscript to false)
+(set: $wallet to false)
+(set: $takemoney to false)
+(set: $family to false)}
+
+You move over to the area that you could consider his living room.
+
+(if: $grigory is false)["I'm here to collect."
+
+"I don't know what you're talking about. Maybe you have the wrong person."
+
+"I'm sure I'm in the right location."
+
+"Oh really? What's my name then."
+
+"Does that matter?"
+
+You hear him mumble, "You should at least know who you're harassing."
+
+You can feel his anger towards you grow. Maybe you should've done research before hand. (set: $anger to $anger + 1)
+
+He continues, ](else:)["I'm here to collect the $300 you owe this month."
+
+"I'm sorry I don't have the money yet."
+
+You look at him unimpressed.
+
+He sees your reaction and says exasperatedly, 
+
+]"I don't know what to tell you. If you want to stay here fine, but I need to pick some stuff up from the post office."
+
+With that you see him leave. You're determined to get the money from him. You think that if you look around his house you can find something to use against him.]
+
+(if: $actions is not 0)[You look at the clock. You think that you have enough time to do a couple of things before he comes back.
+
+> [[Look through the pile of papers on the floor]]
+> [[Look through his desk]]
+> [[Do nothing and wait for Grigory to return]]](else:)[You hear the door knob jiggle indicating that Grigory has returned.
+
+It's time to [[confront Grigory]]]
+
+
+:: Intimidate Him {"position":"1025,1375","size":"100,100"}
+You have a few ways on intimidating him to get the money.
+
+You decide to: (if: $gun is true)[
+> [[Show your gun to him]]](if: $family is true)[
+> [[Blackmail him using his family]]](if: $manuscript is true)[
+> [[Blackmail him using his manuscript]]]
+> [[Threaten to take him back to the boss with you]]
+> [[Cry and gain his sympathies]]
+
+
+:: Intro {"position":"1025,250","size":"100,100"}
+{
+<!-- Checked Victim Folders-->
+(set: $grigory to false)
+(set: $marian to false)
+(set: $tash to false)
+(set: $rory to false)
+(set: $ashley to false)
+
+<!-- Entered Victim House-->
+(set: $grigory_h to false)
+(set: $marian_h to false)
+(set: $tash_h to false)
+(set: $rory_h to false)
+(set: $ashley_h to false)
+
+<!-- Successfully Collected From Victim-->
+(set: $success to 0)
+
+<!-- Debt Owed-->
+(set: $debt to 0)
+(set: $house to false)
+(set: $boss to false)
+
+(set: $actions to 3)
+(set: $time to 0)
+
+<!-- Before leaving -->
+(set: $gun to false)
+(set: $coworkers to false)
+(set: $hunger to true)
+(set: $anger to 0)
+
+}Another beautiful morning means another day on the job. As a member of "Your Local Loan Shark Company," you're in charge of going to clients houses and collecting on various payments.
+
+After you clock in, you [[visit Mick]] to see who you need to visit today.
+
+
+:: Leave the wallet alone {"position":"775,1375","size":"100,100"}
+You don't decide to take the money from him, but you take note that he definitely has enough cash on him for his monthly payment.
+
+(link: "Continue looking through his desk")[(go-to:"Look through his desk")]
+(link:"Do something else")[(go-to:"Inside Grigory's House")]
+
+
+:: Look through his desk {"position":"900,1125","size":"100,100"}
+Where do you want to look?
+
+> [[Through the drawers]]
+> [[Through the pile on the top of the desk ]]
+> [[His desk chair]] 
+
+
+:: Look through the pile of papers on the floor {"position":"1150,1125","size":"100,100"}
+{(set: $actions to $actions - 1)}You see a bunch of papers strewn across the floor.
+
+You see a thick pile of papers piled neatly in the corner. In a messy room, something neat and organized means it must be important.
+
+You approach the pile of papers and see "FINAL MANUSCRIPT. DO NOT TOSS. THIS IS THE ONLY COPY."
+
+You take the pile of papers hostage to threaten Grigory if he doesn't pay up.
+
+(link:"Do something else")[(go-to:"Inside Grigory's House")]
+
+
+:: Marian's File {"position":"1275,750","size":"100,100"}
+{(set:$marian to true)(set: $actions to $actions - 1)}Marian Myers
+
+<img alt="Marian" src="grigory.png" />
+
+''Age:'' 63 Years Old
+''Occupation:'' Middle School Music Teacher
+''Need to Collect:'' $4000
+''Reason:'' Borrowed money to cover costs for her business that eventually failed
+''Additional Info:'' Sweet lady. Very kind. Reminds everyone of their grandma.
+
+(link:"Return")[(if: $actions is not 0)[(go-to:"Skim through client files")](else:)[(go-to: "time to leave")]]
+(link: "Do something else")[(go-to: "leave his office")]
+
+
+:: Mick {"position":"1175,375","size":"100,100"}
+This is your boss Mick. No one knows much information about him other than he built this company from the ground up and that he's one scary dude if you mess with him. 
+
+Other than that, he leaves his employees alone if they do their work well. If they don't do well, then... That's something you don't want to know.
+
+(link: "Go Back")[(go-to:"visit Mick")]
+
+
+:: Rory's File {"position":"1275,875","size":"100,100"}
+{(set:$rory to true)(set: $actions to $actions - 1)}Rory Davies
+
+<img alt="grigory" src="grigory.png" />
+
+''Age:'' 34 Years Old
+''Occupation:'' Unemployed
+''Need to Collect:'' $1000
+''Reason:'' Took money out to cover gambling debt
+''Additional Information:'' Complete loser.
+
+(link:"Return")[(if: $actions is not 0)[(go-to:"Skim through client files")](else:)[(go-to: "time to leave")]]
+(link: "Do something else")[(go-to: "leave his office")]
+
+
+:: Show your gun to him {"position":"1025,1500","size":"100,100"}
+(set: $success to 1)You move your jacket aside and reveal the gun that you have in your holster.
+
+"I don't want to use this, but I won't hesitate if I need to."
+
+"Are you threatening me?"
+
+"I don't know. It depends on how you act."
+
+He huffs off and grabs money that was hiding in a jar in his kitchen. He hands you the cash and tells you to leave.
+
+Since you don't want any problems, you leave after getting the cash. You leave his apartment as you [[finish for the day]].
+
+
+:: Skim through client files {"position":"1150,625","size":"100,100"}
+You look at the client files that your boss gave you. He was kind enough to order the files in the order that you'll visit the clients. What files do you want to read?
+
+> (if:$grigory is false)[(link:"File #1")[(go-to:"Grigory's File")]](else:)[ [[Grigory's File]]]
+<!-- > (if:$marian is false)[(link:"File #2")[(go-to:"Marian's File")]](else:)[ [[Marian's File]]]
+> (if:$tash is false)[(link:"File #3")[(go-to:"Tash's File")]](else:)[ [[Tash's File]]]
+> (if:$rory is false)[(link:"File #4")[(go-to:"Rory's File")]](else:)[ [[Rory's File]]]
+> (if:$ashley is false)[(link:"File #5")[(go-to:"Ashley's File")]](else:)[ [[Ashley's File]]] -->> (link: "Do something else")[(go-to: "leave his office")]
+
+
+
+:: Take gun {"position":"1025,625","size":"100,100"}
+{(set:$actions to $actions - 1)
+(set: $gun to true)}
+You go to your locker and grab your gun. You hope that you don't need it today, but sometimes you get into hairy situations, so you figure better safe than sorry.
+
+After getting your gun, you (link:"head back to your desk.")[(go-to:"leave his office")]
+
+
+:: Take the money {"position":"900,1375","size":"100,100"}
+{(set: $takemoney to true)
+}You pocket the cash. It counts as his monthly payment. 
+
+You could leave now if you wanted or you could stay and shake him down for more money and take this cash as a tip for your services.
+
+What do you do?
+> [[finish for the day]]
+> (link: "Continue looking through his desk")[(go-to:"Look through his desk")]
+> (link:"Do something else")[(go-to:"Inside Grigory's House")]
+
+
+:: Talk to boss again {"position":"775,625","size":"100,100"}
+(set: $actions to $actions - 1)You approach your boss' door again and knock.
+
+(click-replace:"You approach your boss' door again and knock.")[//knock
+knock
+knock//
+
+(live: 1s)[(t8n:'dissolve')["Come in."
+
+He sees you enter the office and asks you, "What do you need?"
+
+> [["Just wanted to see you before I went out"]]
+> [["Could you tell me more about the client?"]]
+> [["I'm not feeling too good today, actually. Could I have the day off?"]]](stop:)]]
+
+
+:: Talk to coworkers {"position":"900,625","size":"100,100"}
+{
+(set:$coworkers to true)
+(set:$actions to $actions - 1)
+}You approach your coworkers and chat with them for a while. It's good for you to build a relationship with them because if you messed up anything, having a good relationship with your coworkers might benefit you in the future.
+
+You try asking your coworkers about your clients, but they don't know anything about them. Oh well, it was worth a shot.
+
+You return (link: "back to your desk.")[(go-to:"leave his office")]
+
+
+:: Tash's File {"position":"1150,875","size":"100,100"}
+{(set:$tash to true)(set: $actions to $actions - 1)}Tash Gomez
+
+<img alt="Tash" src="grigory.png" />
+
+''Age:'' 26 Years Old
+''Occupation:'' Carpenter
+''Need to Collect:'' $1200
+''Reason:'' Took money out to cover medical expenses
+''Additional Info:'' Very brave and good at holding their ground. Does not respond well to threats. 
+
+(link:"Return")[(if: $actions is not 0)[(go-to:"Skim through client files")](else:)[(go-to: "time to leave")]]
+(link: "Do something else")[(go-to: "leave his office")]
+
+
+:: Tell him you know that he has the money. {"position":"1150,1375","size":"100,100"}
+You tell him that you found a couple hundred dollars in his possession that could make you leave right now.
+
+"As much as I //love// your company, I need that money to pay for food."
+
+(if: $hunger is true)[You can hear your stomach loudly growl. You haven't eaten at all today, so it makes sense. The sounds, however, prevent you from pressing him for that money. (link: "You need to try a different method.")[(go-to:"Intimidate him")]](else:)[You take a closer look at his expression and you can tell that he's grasping at straws. It seems like he'll be fine without the money so you keep pressing it.
+
+(if: $family is true)["Don't you have a mother or sister you can rely on? From what I've found, they're in the area so you could easily rely on them for help."
+
+(click-replace: 'for help."')[for help."
+
+You see his face contort. He seems upset that you know about his family and that he has no excuse.
+
+He storms away and goes to his desk to get the money from his wallet. (if: $takemoney is true)["Hey. Where'd my money go! It literally was there this morning, what happened."
+
+He then turns around and looks at you angrily.
+
+"You. You took my money. The only person in my house today was you. You slimy bastard. You already collected this month's funds, why are you shaking me down for more money. Get out."
+
+With that he chases you out of his home. You were not able to get extra cash, but you were able to [[finish for the day]]](else:)[He takes the $300 and throws it at you.
+
+"There. Are you happy? Now get out of my face. You don't need to be here longer than you need to be."
+
+With that, he chases you out of his home and you are able to [[finish for the day]].]]](else:)["I'm sure you'll be able to figure something out."
+
+You see him fuming and he starts yelling at you. As he yells, you walk over to his wallet and take his money from him.
+
+(click-replace: "from him.")[from him.
+
+You see him try to lunge at you, but you're too strong and just shove him out of the way and onto his floor.
+
+"See you next week."
+
+You leave his home as you [[finish for the day]].]]]
+
+
+:: Threaten to take him back to the boss with you {"position":"1150,1625","size":"100,100"}
+(set: $boss to true)You tell him, "I won't hesitate to bring you to my boss if you keep resisting."
+
+He glares at you, "I'm not afraid of you or my boss."
+
+You grab him and carry him over your shoulder to take him to your boss. Thankfully he's smaller than you so it's easy to grab him, despite his protests.
+
+You leave his apartment with Grigory over your shoulder and you leave for the office as you [[finish for the day]].
+
+
+:: Through the drawers {"position":"900,1250","size":"100,100"}
+{(set: $actions to $actions - 1)(set: $wallet to true)}You look through the drawers in his desk.
+
+They're filled with scratch paper and other unimportant documents.
+
+When you open his bottom drawer, you see his wallet. You see $300 sticking out of the wallet.
+
+Do you:
+> [[Take the money]]
+> [[Leave the wallet alone]]
+
+
+:: Through the pile on the top of the desk\  {"position":"775,1125","size":"100,100"}
+{(set: $grigory_h to true)(set: $family to true)}You see a messy pile on his desk. It's hard to move things around without making an even larger mess.
+
+You see on the back of the desk, a row of picture frames. Upon further inspection, you see that its his mom and sister. Conveniently for you, their addresses and phone numbers are written on the back of the frames. You keep note of their information just in case you wanted to threaten Grigory.
+
+(link: "Continue looking through his desk")[(if: $actions is not 0)[(go-to:"Look through his desk")](else:)[(go-to: "Inside Grigory's House")]]
+(link:"Do something else")[(go-to:"Inside Grigory's House")]
+
+
+:: confront Grigory {"position":"1025,1250","size":"100,100"}
+You see Grigory enter his apartment. He seems upset that you're still there, but he's not shocked.
+
+"I don't know why you're still here. I don't have the money." He insists.
+
+You walk up to him and
+> [[Intimidate Him]](if: $wallet is true)[(if: $takemoney is true)[
+> [[Tell him you know that he has the money.]]]]
+
+
+:: finish for the day {"position":"1350,1400","size":"100,100"}
+(if: $boss is true)[You arrive back at the office with Grigory over your shoulder.
+
+All your coworkers don't give you a second look since this is a common thing that happens in the office, so it's just another day for them.
+
+You approach your boss' office and knock on his door with your free arm.
+
+(click-replace:" and knock on his door with your free arm.")[.
+
+//knock
+knock
+knock//
+
+You hear him grunt which lets you know you're allowed to come in.
+
+As you enter his office, he sees you carrying Grigory. He tells you, "Drop the kid off here. I'll talk to him. Go outside."
+
+You follow his instructions. After a couple minutes or so, you see the door open and you see Grigory run out the door sobbing.
+
+You hear your boss call for you to enter your office.
+
+As you enter his office, you see Mick sitting in front of his desk with an unhappy expression.
+
+"You understand why we have employees here, don't you?" He asks with a cold voice.
+
+"Yes."
+
+"Then tell me why you were unable to get the money from that kid. You saw how long it took me to get the money. He should've been an easy client, yet you brought him all the way here."
+
+You look down at your feet. You know that he's upset so you dare not meet his gaze.
+
+You apologize and tell Mick that it won't happen again.
+
+With that you're dismissed. You were successful at least, but your boss is not happy.
+
+''THE END'']](else:)[(if: $success is 1)[You arrive back at the office and report back to your boss with the money you were able to get.
+
+He dismisses you and you go home. (if: $takemoney is true)[As you leave the office, you're happy with the additional $300 you scored today. You think you'll treat yourself for dinner tonight.]](if: $debt is not 0)[(if: $takemoney is true)[You arrive back at the office and report back to your boss with the money you were able to get. You're glad that you were able to grab that money from his wallet since he didn't want to give it to you in the end.
+
+He dismisses you and you go home.](else:)You arrive back at the office, nervous because you weren't able to get the money from Grigory.
+
+You knock at your boss' door.
+
+(click-replace:"You knock at your boss' door.")[//knock
+knock
+knock//
+
+"Come in."
+
+You reluctantly go in and see your boss sitting at his desk.
+
+You tell him that you were not able to get the money from Grigory.
+
+You see his expression sour.
+
+"So you weren't able to do your job, even though this is what you were hired to do?"
+
+"Yes, sir. I'm sorry."
+
+"If this happens again, I won't let this slide again. I'm not going to let you go free though. You owe me double what Grigory owed by tomorrow. Don't disappoint me."
+
+With that, you're dismissed. You need to stop by the bank before going home to get the money you owe your boss. You don't want to know what will happen if you disobey him again.]
+]
+
+''THE END'']
+
+
+:: leave his office {"position":"1025,500","size":"100,100"}
+After leaving his office, you look at the clock (if: $actions is not 0)[and realize you have time to complete $actions (if: $action is 1)[action](else:)[actions] before you have to head out. You decide to:
+(if: $gun is false)[
+> [[Take gun]]]
+> [[Skim through client files]]
+> [[Talk to coworkers]](if: $hunger is true)[
+> [[Eat breakfast]]]
+> [[Talk to boss again]]]
+(else:)[and realize it's [[time to leave]].]
+
+
+:: time to leave {"position":"1025,750","size":"100,100"}
+{(set:$actions to 1)}It's time to head out to(if: $grigory is false)[ the first client's](else:)[ Grigory's apartment.]
+(if: $grigory is false)[Would you like to read client #1's file before you head out?
+
+> (link: "No harm in being prepared.")[(go-to:"Grigory's File")]
+> (link: "I don't see the need. I'm just there to collect money.")[(go-to:"Grigory's apartment")]]
+(else:)[(click-replace: "Grigory's apartment.")[Grigory's apartment.
+
+(live: 1s)[(t8n: "dissolve")[After some driving, you arrive at [[Grigory's apartment]].](stop:)]]]
+
+
+:: visit Mick {"position":"1025,375","size":"100,100"}
+(text-color:cyan)[You knock on his office door.]
+
+(click-replace: "You knock on his office door.")[//knock
+knock
+knock//
+
+(live: 1s)[(t8n: 'dissolve')[You hear a gruff voice say, "Come in."
+
+When you enter Mick's office, you see [[Mick]] sitting in front of his desk reading the newspaper.](stop:)]]<readingthenewspaper|
+
+(click-replace: "reading the newspaper.")[reading the newspaper.
+
+As you approach his desk, he looks up at you before you say anything.
+
+"You're here, great. Take these. These are the people you need to visit today. Make sure you collect what they owe. If you don't, their debt automatically doubles and you pay what they missed this week."
+
+You take the folders and [[leave his office]].]
+
+
+:: StoryStylesheet [stylesheet]
+tw-link, .enchantment-link {
+    color: cyan;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
